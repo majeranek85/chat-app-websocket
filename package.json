@@ -2,5 +2,8 @@
   "name": "chat-app-websocket",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "browser-sync": "^2.26.10"
+  }
 }
