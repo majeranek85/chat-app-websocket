@@ -27,7 +27,7 @@ const login = (e) => {
 
 const addMessage = (name, message) => {
   const listElem = document.createElement('li')//
-  listElem.classList.add('message', 'message--received', `${name === userName && `message--self`}`);
+  listElem.classList.add('message', 'message--received', `${name === userName && `message--self`}`, `${name === 'Chat Bot' && `message--bot`}`);
   console.log(listElem);
   listElem.innerHTML = `
     <h3 class='message__author'>${name === userName ? 'You' : name}</h3>
@@ -47,7 +47,7 @@ const sendMessage = (e) => {
   } else {
     addMessage(userName, messageContent);
     socket.emit('message', {name: userName, message: messageContent});
-    messageContent = '';
+    messageContentInput.value = '';
   }
 };
 
